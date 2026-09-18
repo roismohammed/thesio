@@ -1,0 +1,285 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "thesis": "Thesis",
+    "myThesis": "My Thesis",
+    "profile": "Profile",
+    "guide": "Guide & Help",
+    "admin": "Administration",
+    "adminDashboard": "Admin Dashboard",
+    "adminUsers": "Manage Users",
+    "adminRoles": "Roles & Permissions",
+    "adminPlans": "Subscription Plans",
+    "adminTheses": "Student Theses",
+    "workflows": "Workflows",
+    "analytics": "Analytics",
+    "projects": "Projects",
+    "teams": "Teams",
+    "quickCreate": "Quick Create",
+    "inbox": "Inbox",
+    "documents": {
+      "label": "Documents",
+      "dataLibrary": "Data Library",
+      "reports": "Reports",
+      "assistant": "Document Assistant",
+      "more": "More",
+      "open": "Open",
+      "share": "Share",
+      "delete": "Delete"
+    },
+    "secondary": {
+      "settings": "Settings",
+      "help": "Help",
+      "search": "Search"
+    },
+    "user": {
+      "account": "Account",
+      "billing": "Billing",
+      "notifications": "Notifications",
+      "logout": "Log out"
+    }
+  },
+  "header": {
+    "titleDefault": "Dashboard"
+  },
+  "breadcrumb": {
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "profile": "Profile",
+    "guide": "Guide & Help",
+    "admin": "Admin",
+    "adminTheses": "Student Theses"
+  },
+  "page": {
+    "dashboard": {
+      "welcome": "Welcome to Thesio",
+      "greeting": "Good morning, {{name}}.",
+      "progressHeadline": "Your thesis is {{value}}% complete.",
+      "skripsiSelesai": "Thesis complete",
+      "stageDone": "Done",
+      "stageNow": "In progress",
+      "stageTodo": "Not scheduled",
+      "writingTrendTitle": "Writing progress",
+      "writingTrendHint": "Last 8 weeks",
+      "writingTrendTarget": "target {{target}}",
+      "writingTrendWords": "{{count}} words",
+      "chapterStatusTitle": "Chapter status",
+      "chapterStatusHint": "{{count}} chapters",
+      "tasksTitle": "Today's priority tasks",
+      "tasksHint": "{{count}} tasks",
+      "taskTagToday": "Today",
+      "taskTagRevision": "Revision",
+      "taskTagDraft": "Draft",
+      "supervisionLabel": "Last supervision note",
+      "quoteSig": "Thesio · thesis companion"
+    },
+    "settings": {
+      "title": "Appearance Settings",
+      "description": "Adjust theme, accent color, and sidebar variant. Changes are saved and applied instantly.",
+      "theme": {
+        "title": "Theme",
+        "description": "Choose the app display mode.",
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System",
+        "lightDesc": "Light appearance at all times.",
+        "darkDesc": "Dark appearance at all times.",
+        "systemDesc": "Follow the device preference."
+      },
+      "accent": {
+        "title": "Accent Color",
+        "description": "Pick the primary color used across the interface.",
+        "red": "Red",
+        "blue": "Blue",
+        "green": "Green",
+        "violet": "Violet"
+      },
+      "sidebar": {
+        "title": "Sidebar Variant",
+        "description": "Choose the sidebar layout style.",
+        "sidebarLabel": "Sidebar",
+        "sidebarDesc": "Content aligns with the sidebar on the left.",
+        "insetLabel": "Inset",
+        "insetDesc": "Content sits apart from the sidebar on a tinted background."
+      },
+      "language": {
+        "title": "Language",
+        "description": "Choose the app interface language.",
+        "idLabel": "Indonesia",
+        "enLabel": "English",
+        "idDesc": "Interface in Indonesian.",
+        "enDesc": "Interface in English."
+      }
+    }
+  },
+  "seo": {
+    "siteName": "Thesio",
+    "defaultTitle": "Thesio",
+    "defaultDescription": "An adaptive workspace for teams.",
+    "pages": {
+      "dashboard": {
+        "title": "Dashboard",
+        "description": "Overview of your activity and workspace in Thesio."
+      },
+      "settings": {
+        "title": "Appearance Settings",
+        "description": "Customize theme, accent color, and sidebar variant."
+      }
+    }
+  },
+  "language": {
+    "code": {
+      "id": "ID",
+      "en": "EN"
+    },
+    "name": {
+      "id": "Indonesia",
+      "en": "English"
+    },
+    "switcher": {
+      "ariaLabel": "Switch language"
+    }
+  },
+  "auth": {
+    "login": {
+      "subtitle": "Sign in to continue to Thesio",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "forgotPassword": "Forgot password?",
+      "signIn": "Sign in",
+      "signingIn": "Signing in…",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Sign up",
+      "error": {
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "register": {
+      "subtitle": "Create a new account to start using Thesio",
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "passwordConfirmLabel": "Confirm password",
+      "register": "Sign up",
+      "registering": "Signing up…",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in"
+    },
+    "forgotPassword": {
+      "subtitle": "Enter your email to receive a recovery link",
+      "emailLabel": "Email",
+      "send": "Send link",
+      "sending": "Sending…",
+      "neutral": "If the email is registered, a recovery link has been sent.",
+      "backToLogin": "Back to sign in"
+    },
+    "resetPassword": {
+      "subtitle": "Create a new password for your account",
+      "emailLabel": "Email",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm password",
+      "reset": "Reset Password",
+      "resetting": "Resetting…",
+      "success": "Password reset successfully. Please sign in.",
+      "invalidLink": "The link is invalid or has expired.",
+      "requestNew": "Request a new link",
+      "backToLogin": "Back to sign in"
+    },
+    "accessDenied": {
+      "title": "Access Denied",
+      "description": "You do not have permission to access this page.",
+      "backHome": "Back to Home"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "editTitle": "Profile Information",
+    "name": "Name",
+    "email": "Email",
+    "save": "Save Changes",
+    "passwordTitle": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm new password",
+    "savePassword": "Change Password",
+    "toast": {
+      "profileSaved": "Profile saved successfully.",
+      "passwordSaved": "Password changed successfully.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin",
+      "open": "Open",
+      "usersTitle": "Users",
+      "usersDescription": "Manage user accounts, roles, and active status.",
+      "rolesTitle": "Roles",
+      "rolesDescription": "Manage roles and the permissions attached to them.",
+      "permissionsTitle": "Permissions",
+      "permissionsDescription": "Manage the list of available permissions."
+    },
+    "common": {
+      "actions": "Actions",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel",
+      "prev": "Previous",
+      "next": "Next",
+      "pageOf": "Page {{page}} of {{last}}",
+      "empty": "No data.",
+      "error": "Something went wrong. Please try again."
+    },
+    "users": {
+      "title": "Users",
+      "name": "Name",
+      "email": "Email",
+      "roles": "Roles",
+      "status": "Status",
+      "active": "Active",
+      "disabled": "Disabled",
+      "searchPlaceholder": "Search name or email…",
+      "allRoles": "All roles",
+      "create": "Create User",
+      "createTitle": "Create User",
+      "editTitle": "Edit User",
+      "password": "Password",
+      "newPassword": "New Password",
+      "passwordConfirm": "Confirm password",
+      "toggleStatus": "Toggle active status",
+      "toast": {
+        "saved": "User saved successfully.",
+        "deleted": "User deleted successfully.",
+        "updated": "User status updated."
+      }
+    },
+    "roles": {
+      "title": "Roles",
+      "name": "Name",
+      "permissions": "Permissions",
+      "noPermissions": "No permissions",
+      "description": "Manage roles and the permissions attached to them.",
+      "create": "Create Role",
+      "createTitle": "Create Role",
+      "editTitle": "Edit Role",
+      "toast": {
+        "saved": "Role saved successfully.",
+        "deleted": "Role deleted successfully."
+      }
+    },
+    "permissions": {
+      "title": "Permissions",
+      "name": "Name",
+      "guard": "Guard",
+      "description": "Manage the list of available permissions.",
+      "create": "Create Permission",
+      "createTitle": "Create Permission",
+      "namePlaceholder": "e.g. manage reports",
+      "toast": {
+        "saved": "Permission saved successfully.",
+        "deleted": "Permission deleted successfully."
+      }
+    }
+  }
+}

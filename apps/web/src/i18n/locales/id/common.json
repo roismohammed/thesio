@@ -1,0 +1,285 @@
+{
+  "nav": {
+    "dashboard": "Dasbor",
+    "thesis": "Skripsi",
+    "myThesis": "Skripsi Saya",
+    "profile": "Profil",
+    "guide": "Bantuan",
+    "admin": "Administrasi",
+    "adminDashboard": "Dasbor Admin",
+    "adminUsers": "Kelola Pengguna",
+    "adminRoles": "Peran & Izin",
+    "adminPlans": "Paket Langganan",
+    "adminTheses": "Skripsi Mahasiswa",
+    "workflows": "Alur Kerja",
+    "analytics": "Analitik",
+    "projects": "Proyek",
+    "teams": "Tim",
+    "quickCreate": "Buat Cepat",
+    "inbox": "Kotak masuk",
+    "documents": {
+      "label": "Dokumen",
+      "dataLibrary": "Pustaka Data",
+      "reports": "Laporan",
+      "assistant": "Asisten Dokumen",
+      "more": "Lainnya",
+      "open": "Buka",
+      "share": "Bagikan",
+      "delete": "Hapus"
+    },
+    "secondary": {
+      "settings": "Pengaturan",
+      "help": "Bantuan",
+      "search": "Pencarian"
+    },
+    "user": {
+      "account": "Akun",
+      "billing": "Tagihan",
+      "notifications": "Notifikasi",
+      "logout": "Keluar"
+    }
+  },
+  "header": {
+    "titleDefault": "Dasbor"
+  },
+  "breadcrumb": {
+    "dashboard": "Dasbor",
+    "settings": "Pengaturan",
+    "profile": "Profil",
+    "guide": "Bantuan",
+    "admin": "Admin",
+    "adminTheses": "Skripsi Mahasiswa"
+  },
+  "page": {
+    "dashboard": {
+      "welcome": "Selamat datang di Thesio",
+      "greeting": "Selamat pagi, {{name}}.",
+      "progressHeadline": "Skripsi kamu {{value}}% selesai.",
+      "skripsiSelesai": "Skripsi selesai",
+      "stageDone": "Selesai",
+      "stageNow": "Sedang berjalan",
+      "stageTodo": "Belum dijadwalkan",
+      "writingTrendTitle": "Progres penulisan",
+      "writingTrendHint": "8 minggu terakhir",
+      "writingTrendTarget": "target {{target}}",
+      "writingTrendWords": "{{count}} kata",
+      "chapterStatusTitle": "Status per bab",
+      "chapterStatusHint": "{{count}} bab",
+      "tasksTitle": "Tugas prioritas hari ini",
+      "tasksHint": "{{count}} tugas",
+      "taskTagToday": "Hari ini",
+      "taskTagRevision": "Revisi",
+      "taskTagDraft": "Draft",
+      "supervisionLabel": "Catatan bimbingan terakhir",
+      "quoteSig": "Thesio · pendamping skripsi"
+    },
+    "settings": {
+      "title": "Pengaturan Tampilan",
+      "description": "Sesuaikan tema, warna aksen, dan varian sidebar. Perubahan langsung tersimpan dan diterapkan seketika.",
+      "theme": {
+        "title": "Tema",
+        "description": "Pilih mode tampilan aplikasi.",
+        "light": "Terang",
+        "dark": "Gelap",
+        "system": "Sistem",
+        "lightDesc": "Tampilan terang sepanjang waktu.",
+        "darkDesc": "Tampilan gelap sepanjang waktu.",
+        "systemDesc": "Mengikuti preferensi perangkat."
+      },
+      "accent": {
+        "title": "Warna Aksen",
+        "description": "Pilih warna utama yang digunakan di seluruh antarmuka.",
+        "red": "Merah",
+        "blue": "Biru",
+        "green": "Hijau",
+        "violet": "Ungu"
+      },
+      "sidebar": {
+        "title": "Varian Sidebar",
+        "description": "Pilih gaya letak sidebar.",
+        "sidebarLabel": "Sidebar",
+        "sidebarDesc": "Konten sejajar dengan sidebar di sisi kiri.",
+        "insetLabel": "Inset",
+        "insetDesc": "Konten terpisah dari sidebar dengan latar bertingkat."
+      },
+      "language": {
+        "title": "Bahasa",
+        "description": "Pilih bahasa antarmuka aplikasi.",
+        "idLabel": "Indonesia",
+        "enLabel": "English",
+        "idDesc": "Tampilan dalam bahasa Indonesia.",
+        "enDesc": "Tampilan dalam bahasa Inggris."
+      }
+    }
+  },
+  "seo": {
+    "siteName": "Thesio",
+    "defaultTitle": "Thesio",
+    "defaultDescription": "Ruang kerja yang adaptif untuk tim.",
+    "pages": {
+      "dashboard": {
+        "title": "Dasbor",
+        "description": "Ringkasan aktivitas dan ruang kerja Anda di Thesio."
+      },
+      "settings": {
+        "title": "Pengaturan Tampilan",
+        "description": "Sesuaikan tema, warna aksen, dan varian sidebar."
+      }
+    }
+  },
+  "language": {
+    "code": {
+      "id": "ID",
+      "en": "EN"
+    },
+    "name": {
+      "id": "Indonesia",
+      "en": "English"
+    },
+    "switcher": {
+      "ariaLabel": "Ganti bahasa"
+    }
+  },
+  "auth": {
+    "login": {
+      "subtitle": "Masuk untuk melanjutkan ke Thesio",
+      "emailLabel": "Email",
+      "passwordLabel": "Sandi",
+      "forgotPassword": "Lupa sandi?",
+      "signIn": "Masuk",
+      "signingIn": "Memasuki…",
+      "noAccount": "Belum punya akun?",
+      "createAccount": "Daftar",
+      "error": {
+        "generic": "Terjadi kesalahan. Silakan coba lagi."
+      }
+    },
+    "register": {
+      "subtitle": "Buat akun baru untuk mulai menggunakan Thesio",
+      "nameLabel": "Nama",
+      "emailLabel": "Email",
+      "passwordLabel": "Sandi",
+      "passwordConfirmLabel": "Konfirmasi sandi",
+      "register": "Daftar",
+      "registering": "Mendaftar…",
+      "haveAccount": "Sudah punya akun?",
+      "signIn": "Masuk"
+    },
+    "forgotPassword": {
+      "subtitle": "Masukkan email untuk menerima tautan pemulihan",
+      "emailLabel": "Email",
+      "send": "Kirim tautan",
+      "sending": "Mengirim…",
+      "neutral": "Jika email terdaftar, tautan pemulihan telah dikirim.",
+      "backToLogin": "Kembali ke halaman masuk"
+    },
+    "resetPassword": {
+      "subtitle": "Buat sandi baru untuk akun Anda",
+      "emailLabel": "Email",
+      "newPassword": "Sandi Baru",
+      "confirmPassword": "Konfirmasi sandi",
+      "reset": "Atur Ulang Sandi",
+      "resetting": "Mengatur ulang…",
+      "success": "Sandi berhasil diatur ulang. Silakan masuk.",
+      "invalidLink": "Tautan tidak valid atau telah kedaluwarsa.",
+      "requestNew": "Minta tautan baru",
+      "backToLogin": "Kembali ke halaman masuk"
+    },
+    "accessDenied": {
+      "title": "Akses Ditolak",
+      "description": "Anda tidak memiliki izin untuk mengakses halaman ini.",
+      "backHome": "Kembali ke Beranda"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "editTitle": "Informasi Profil",
+    "name": "Nama",
+    "email": "Email",
+    "save": "Simpan Perubahan",
+    "passwordTitle": "Ubah Sandi",
+    "currentPassword": "Sandi Saat Ini",
+    "newPassword": "Sandi Baru",
+    "confirmPassword": "Konfirmasi sandi baru",
+    "savePassword": "Ubah Sandi",
+    "toast": {
+      "profileSaved": "Profil berhasil disimpan.",
+      "passwordSaved": "Sandi berhasil diubah.",
+      "error": "Terjadi kesalahan. Silakan coba lagi."
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin",
+      "open": "Buka",
+      "usersTitle": "Pengguna",
+      "usersDescription": "Kelola akun pengguna, peran, dan status aktif.",
+      "rolesTitle": "Peran",
+      "rolesDescription": "Kelola peran dan izin yang melekat padanya.",
+      "permissionsTitle": "Izin",
+      "permissionsDescription": "Kelola daftar izin yang tersedia."
+    },
+    "common": {
+      "actions": "Aksi",
+      "edit": "Ubah",
+      "delete": "Hapus",
+      "save": "Simpan",
+      "cancel": "Batal",
+      "prev": "Sebelumnya",
+      "next": "Berikutnya",
+      "pageOf": "Halaman {{page}} dari {{last}}",
+      "empty": "Tidak ada data.",
+      "error": "Terjadi kesalahan. Silakan coba lagi."
+    },
+    "users": {
+      "title": "Pengguna",
+      "name": "Nama",
+      "email": "Email",
+      "roles": "Peran",
+      "status": "Status",
+      "active": "Aktif",
+      "disabled": "Nonaktif",
+      "searchPlaceholder": "Cari nama atau email…",
+      "allRoles": "Semua peran",
+      "create": "Buat Pengguna",
+      "createTitle": "Buat Pengguna",
+      "editTitle": "Ubah Pengguna",
+      "password": "Sandi",
+      "newPassword": "Sandi Baru",
+      "passwordConfirm": "Konfirmasi sandi",
+      "toggleStatus": "Ubah status aktif",
+      "toast": {
+        "saved": "Pengguna berhasil disimpan.",
+        "deleted": "Pengguna berhasil dihapus.",
+        "updated": "Status pengguna diperbarui."
+      }
+    },
+    "roles": {
+      "title": "Peran",
+      "name": "Nama",
+      "permissions": "Izin",
+      "noPermissions": "Tidak ada izin",
+      "description": "Kelola peran dan izin yang melekat padanya.",
+      "create": "Buat Peran",
+      "createTitle": "Buat Peran",
+      "editTitle": "Ubah Peran",
+      "toast": {
+        "saved": "Peran berhasil disimpan.",
+        "deleted": "Peran berhasil dihapus."
+      }
+    },
+    "permissions": {
+      "title": "Izin",
+      "name": "Nama",
+      "guard": "Guard",
+      "description": "Kelola daftar izin yang tersedia.",
+      "create": "Buat Izin",
+      "createTitle": "Buat Izin",
+      "namePlaceholder": "mis. manage reports",
+      "toast": {
+        "saved": "Izin berhasil disimpan.",
+        "deleted": "Izin berhasil dihapus."
+      }
+    }
+  }
+}

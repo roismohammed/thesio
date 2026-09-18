@@ -1,0 +1,2 @@
+- [base-ui toggle-group API](reference-base-ui-toggle-group.md) — base-ui ToggleGroup uses arrays for value even when single-select
+- [Thesio web stack](project-thesio-web-stack.md) — React 19 SPA, base-nova shadcn on @base-ui/react, react-router-dom v7

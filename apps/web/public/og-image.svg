@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a0a2e"/>
+      <stop offset="1" stop-color="#2d0b52"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#863bff"/>
+      <stop offset="1" stop-color="#47bfff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="320" fill="#863bff" fill-opacity="0.12"/>
+  <circle cx="140" cy="560" r="260" fill="#47bfff" fill-opacity="0.10"/>
+  <g transform="translate(120 250)">
+    <path fill="url(#mark)" d="M0 0h130l-30 42H62v150L0 230 30 188H0V0z"/>
+  </g>
+  <text x="300" y="300" font-family="Inter, Geist, Arial, sans-serif" font-size="96" font-weight="700" fill="#ffffff" letter-spacing="-2">Thesio</text>
+  <text x="305" y="370" font-family="Inter, Geist, Arial, sans-serif" font-size="34" font-weight="400" fill="#c9b8ff">Ruang kerja yang adaptif untuk tim.</text>
+</svg>

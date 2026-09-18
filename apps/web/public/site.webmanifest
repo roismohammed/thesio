@@ -1,0 +1,17 @@
+{
+  "name": "Thesio",
+  "short_name": "Thesio",
+  "description": "Ruang kerja yang adaptif untuk tim.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#863bff",
+  "icons": [
+    {
+      "src": "/logo/thesio.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
