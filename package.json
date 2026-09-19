@@ -9,7 +9,10 @@
     "setup": "npm install && cd apps/api && composer install && php -r \"file_exists('.env') || copy('.env.example', '.env');\" && php artisan key:generate --ansi && php artisan migrate --graceful --ansi",
     "dev": "concurrently --kill-others -n api,web -c \"#93c5fd,#c4b5fd\" \"cd apps/api && php artisan serve --port=8003\" \"cd apps/web && npm run dev\"",
     "dev:api": "cd apps/api && php artisan serve --port=8003",
-    "dev:web": "cd apps/web && npm run dev"
+    "dev:web": "cd apps/web && npm run dev",
+    "build": "bun --filter web build && bun --filter @repo/api build",
+    "build:web": "bun --filter web build",
+    "build:api": "bun --filter @repo/api build"
   },
   "devDependencies": {
     "concurrently": "^9.2.0"

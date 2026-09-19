@@ -17,12 +17,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { useAuth } from "@/lib/auth-context"
-import { api } from "@/lib/api"
 import { useSeoMeta } from "@/hooks/use-seo-meta"
 
 export function RegisterPage() {
   const { t } = useTranslation()
-  const { signIn } = useAuth()
+  const { register } = useAuth()
   const navigate = useNavigate()
 
   const [name, setName] = useState("")
@@ -52,16 +51,12 @@ export function RegisterPage() {
     setSubmitting(true)
 
     try {
-      await api("/api/auth/register", {
-        method: "POST",
-        body: {
-          name,
-          email,
-          password,
-          password_confirmation: passwordConfirmation,
-        },
+      await register({
+        name,
+        email,
+        password,
+        password_confirmation: passwordConfirmation,
       })
-      await signIn(email, password)
       navigate("/dashboard", { replace: true })
     } catch (err) {
       setError(

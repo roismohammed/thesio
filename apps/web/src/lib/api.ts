@@ -119,9 +119,16 @@ async function ensureCsrf(): Promise<string> {
   if (existing) {
     return existing
   }
-  await fetch(`${API_ORIGIN}/sanctum/csrf-cookie`, {
-    credentials: "include",
-  })
+  try {
+    await fetch(`${API_ORIGIN}/sanctum/csrf-cookie`, {
+      credentials: "include",
+    })
+  } catch (err) {
+    throw new ApiError(
+      0,
+      `Gagal terhubung ke backend (${API_ORIGIN}). Pastikan server backend sedang berjalan.`,
+    )
+  }
   const token = getCookie("XSRF-TOKEN")
   if (!token) {
     throw new ApiError(419, "CSRF cookie tidak tersedia.")
@@ -152,17 +159,25 @@ export async function api<T>(
     headers["X-XSRF-TOKEN"] = token
   }
 
-  const response = await fetch(`${API_ORIGIN}${path}`, {
-    method,
-    credentials: "include",
-    headers,
-    body:
-      body === undefined
-        ? undefined
-        : isFormData
-          ? body
-          : JSON.stringify(body),
-  })
+  let response: Response
+  try {
+    response = await fetch(`${API_ORIGIN}${path}`, {
+      method,
+      credentials: "include",
+      headers,
+      body:
+        body === undefined
+          ? undefined
+          : isFormData
+            ? body
+            : JSON.stringify(body),
+    })
+  } catch (err) {
+    throw new ApiError(
+      0,
+      `Gagal terhubung ke server backend (${API_ORIGIN}). Pastikan server backend sedang berjalan.`,
+    )
+  }
 
   let bodyText = ""
   try {

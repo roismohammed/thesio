@@ -12,11 +12,19 @@ export interface CurrentUser {
   permissions: string[]
 }
 
+export interface RegisterPayload {
+  name: string
+  email: string
+  password: string
+  password_confirmation: string
+}
+
 interface AuthContextValue {
   user: CurrentUser | null
   loading: boolean
   refresh: () => Promise<void>
   signIn: (email: string, password: string) => Promise<void>
+  register: (payload: RegisterPayload) => Promise<void>
   signOut: () => Promise<void>
 }
 
@@ -75,6 +83,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setStoredUser(payload.data)
   }
 
+  async function register(payload: RegisterPayload): Promise<void> {
+    const response = await api<{ data: CurrentUser }>("/api/auth/register", {
+      method: "POST",
+      body: payload,
+    })
+    setUser(response.data)
+    setStoredUser(response.data)
+  }
+
   async function signOut(): Promise<void> {
     try {
       await api("/api/auth/logout", { method: "POST" })
@@ -85,7 +102,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, loading, refresh, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, loading, refresh, signIn, register, signOut }}>
       {children}
     </AuthContext.Provider>
   )
