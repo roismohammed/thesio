@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { useDroppable } from "@dnd-kit/core"
 import { SortableContext, useSortable, verticalListSortingStrategy } from "@dnd-kit/sortable"
-import { CSS } from "@dnd-kit/utilities"
 
 import type { Task, TaskStatus } from "@/features/thesis/types"
 import { TaskCard } from "./task-card"
@@ -63,7 +62,10 @@ function SortableTaskCard({ task, ...actions }: TaskCardProps) {
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition }}
+      style={{
+        transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : undefined,
+        transition,
+      }}
       {...attributes}
       {...listeners}
       className={cn(isDragging && "opacity-40")}
