@@ -1,138 +1,173 @@
-# Thesio Monorepo
+# Thesio — Platform Asisten Skripsi Mahasiswa
 
-Thesio adalah platform pembantu mahasiswa mengerjakan skripsi secara terstruktur dan mandiri.
+Thesio adalah platform berbasis web untuk memandu mahasiswa mengerjakan skripsi secara terstruktur, mandiri, dan efisien.
 
-Monorepo ini terdiri dari dua aplikasi independen di dalam folder `apps/`:
+Project ini menggunakan arsitektur **Monorepo** yang memisahkan Backend API dan Frontend Web ke dalam direktori `apps/`:
 
 ```text
 .
 ├── apps/
-│   ├── api/   # Backend (Laravel 13, PHP 8.3+)
-│   └── web/   # Frontend (React 19, Vite, Tailwind v4)
+│   ├── api/          # Backend: Laravel 13 (PHP 8.3+)
+│   └── web/          # Frontend: React 19 + Vite 8 + Tailwind CSS v4
+├── package.json      # Monorepo Workspace Config
+└── README.md
 ```
 
 ---
 
-## Prasyarat Sistem (Yang Harus Di-install)
+## 📋 Prasyarat Sistem
 
-Sebelum menjalankan aplikasi, pastikan perangkat Anda sudah terinstall:
+Pastikan perangkat Anda sudah terinstall:
 
-1. **PHP** versi `>= 8.3` (Rekomendasi: PHP 8.3 atau 8.4)
-   - **Ekstensi PHP Wajib** (aktifkan di `php.ini`):
-     - `pdo_sqlite` (untuk database SQLite default)
-     - `pdo_mysql` (jika memilih database MySQL)
-     - `mbstring`, `openssl`, `tokenizer`, `xml`, `ctype`, `json`, `bcmath`, `curl`, `zip`, `fileinfo`, `gd`
-2. **Composer** (versi `>= 2.x`)
-3. **Node.js** (versi `>= 20.x`) & **npm**, atau **Bun** (versi `>= 1.0`)
-4. **MySQL / MariaDB** *(Opsional)*: Hanya jika memilih database MySQL (melalui XAMPP, Laragon, atau Docker).
+| Software | Versi Minimum | Keterangan |
+|---|---|---|
+| **PHP** | `^8.3` atau `^8.4` | Backend Runtime |
+| **Composer** | `^2.x` | PHP Package Manager |
+| **Node.js** atau **Bun** | Node `>= 20.x` / Bun `>= 1.0` | Frontend Runtime & Package Manager |
+| **Database** | SQLite (Bawaan) atau MySQL `>= 8.0` | SQLite tidak memerlukan instalasi service DB |
 
----
-
-## 1. Panduan Setup & Menjalankan Backend (`apps/api`)
-
-### Langkah 1: Masuk ke folder backend
-```bash
-cd apps/api
-```
-
-### Langkah 2: Install dependensi Composer & NPM
-```bash
-composer install
-npm install
-```
-
-### Langkah 3: Setup Environment (`.env`)
-Salin file `.env.example` ke `.env`:
-```bash
-cp .env.example .env
-# Pada Windows PowerShell jika 'cp' tidak tersedia:
-# Copy-Item .env.example .env
-```
-
-Generate application key:
-```bash
-php artisan key:generate
-```
-
-### Langkah 4: Konfigurasi Database
-Pilih salah satu jenis database di file `apps/api/.env`:
-
-* **Opsi A: SQLite (Default & Paling Praktis - Tanpa Perlu Install Server DB)**
-  ```env
-  DB_CONNECTION=sqlite
-  ```
-
-* **Opsi B: MySQL (Jika menggunakan XAMPP / Laragon)**
-  Pastikan service MySQL aktif dan buat database bernama `skripsi_ai`, lalu sesuaikan:
-  ```env
-  DB_CONNECTION=mysql
-  DB_HOST=127.0.0.1
-  DB_PORT=3306
-  DB_DATABASE=skripsi_ai
-  DB_USERNAME=root
-  DB_PASSWORD=
-  ```
-
-### Langkah 5: Jalankan Migrasi & Seeder Data Awal
-```bash
-php artisan migrate --seed
-```
-
-> **Akun Demo Bawaan (Hasil Seeder):**
-> - **Super Admin**: `superadmin@thesio.test` | Password: `password`
-> - **Mahasiswa / Demo User**: `user@thesio.test` | Password: `password`
-
-### Langkah 6: Jalankan Server Backend
-Jalankan server Laravel pada **Port 8003**:
-```bash
-php artisan serve --port=8003
-```
-*Atau jalankan server lengkap bersama queue & log viewer:*
-```bash
-composer run dev
-```
-
-- **Backend Port**: `8003`
-- **Base URL API**: `http://localhost:8003`
-- **Health Check**: `http://localhost:8003/up`
+### Ekstensi PHP yang Wajib Aktif (di `php.ini`):
+- `pdo_sqlite` (jika menggunakan database SQLite bawaan)
+- `pdo_mysql` (jika menggunakan MySQL / MariaDB)
+- `curl`, `fileinfo`, `gd`, `mbstring`, `openssl`, `tokenizer`, `xml`, `zip`, `bcmath`, `json`, `ctype`
 
 ---
 
-## 2. Panduan Setup & Menjalankan Frontend (`apps/web`)
+## 🚀 Cara Cepat (Jalankan Sekaligus dari Root)
 
-### Langkah 1: Buka terminal baru & masuk ke folder frontend
+Jika menggunakan Node/Bun di root folder:
+
 ```bash
-cd apps/web
-```
+# 1. Install semua dependensi
+npm run setup
 
-### Langkah 2: Install dependensi
-```bash
-npm install
-# atau jika menggunakan Bun:
-# bun install
-```
-
-### Langkah 3: Pastikan Environment Frontend
-File `apps/web/.env` harus mengarah ke URL backend:
-```env
-VITE_API_URL=http://localhost:8003
-```
-
-### Langkah 4: Jalankan Dev Server Frontend
-```bash
+# 2. Jalankan Backend & Frontend bersamaan
 npm run dev
-# atau jika menggunakan Bun:
-# bun run dev
 ```
-
-- **Frontend Port**: `5176`
-- **Frontend URL**: `http://localhost:5176`
 
 ---
 
-## Ringkasan Port & URL
+## 🛠️ Panduan Manual per Aplikasi
 
-| Layanan | Folder | Perintah Run | Port | URL Akses |
-|---|---|---|---|---|
-| **Backend (API)** | `apps/api` | `php artisan serve --port=8003` | **8003** | `http://localhost:8003` |
-| **Frontend (Web)** | `apps/web` | `npm run dev` | **5176** | `http://localhost:5176` |
+### 1. Setup Backend (`apps/api`)
+
+1. **Masuk ke folder API:**
+   ```bash
+   cd apps/api
+   ```
+
+2. **Install Dependensi Composer & NPM:**
+   ```bash
+   composer install
+   npm install
+   ```
+
+3. **Setup Environment:**
+   ```bash
+   cp .env.example .env
+   # Di Windows PowerShell jika 'cp' tidak dikenal:
+   # Copy-Item .env.example .env
+
+   php artisan key:generate
+   ```
+
+4. **Konfigurasi Database (`apps/api/.env`):**
+   - **Opsi A: SQLite (Paling Mudah, Tanpa Setup Server DB)**
+     ```env
+     DB_CONNECTION=sqlite
+     ```
+   - **Opsi B: MySQL (XAMPP / Laragon)**
+     Buat database bernama `skripsi_ai`, lalu sesuaikan di `.env`:
+     ```env
+     DB_CONNECTION=mysql
+     DB_HOST=127.0.0.1
+     DB_PORT=3306
+     DB_DATABASE=skripsi_ai
+     DB_USERNAME=root
+     DB_PASSWORD=
+     ```
+
+5. **Jalankan Migrasi & Data Seeder:**
+   ```bash
+   php artisan migrate --seed
+   ```
+
+6. **Jalankan Server Backend:**
+   ```bash
+   php artisan serve --port=8003
+   ```
+   > Server backend berjalan di: **`http://localhost:8003`** (Health check: `http://localhost:8003/up`)
+
+---
+
+### 2. Setup Frontend (`apps/web`)
+
+1. **Buka terminal baru dan masuk ke folder Web:**
+   ```bash
+   cd apps/web
+   ```
+
+2. **Install Dependensi:**
+   ```bash
+   npm install
+   # atau menggunakan Bun:
+   # bun install
+   ```
+
+3. **Konfigurasi Environment:**
+   Pastikan file `apps/web/.env` berisi:
+   ```env
+   VITE_API_URL=http://localhost:8003
+   ```
+
+4. **Jalankan Server Development:**
+   ```bash
+   npm run dev
+   # atau menggunakan Bun:
+   # bun run dev
+   ```
+   > Aplikasi web berjalan di: **`http://localhost:5176`**
+
+---
+
+## 🌐 Ringkasan Port & URL Layanan
+
+| Layanan | Port | URL Lokal | Deskripsi |
+|---|---|---|---|
+| **Frontend Web** | `5176` | `http://localhost:5176` | Tampilan Antarmuka React SPA |
+| **Backend API** | `8003` | `http://localhost:8003` | REST API Laravel |
+| **API Health** | `8003` | `http://localhost:8003/up` | Status Server Backend |
+
+---
+
+## 🔑 Akun Demo (Hasil Database Seeder)
+
+Setelah menjalankan `php artisan migrate --seed`, akun berikut siap digunakan untuk login:
+
+| Role | Email | Password | Akses |
+|---|---|---|---|
+| **Super Admin** | `superadmin@thesio.test` | `password` | Dashboard Admin & Manajemen User |
+| **Mahasiswa / User** | `user@thesio.test` | `password` | Dashboard Penyusunan Skripsi & Fitur AI |
+
+---
+
+## 📦 Build untuk Production
+
+```bash
+# Build Frontend Web (menghasilkan apps/web/dist)
+bun --filter web build
+# atau: cd apps/web && npm run build
+
+# Build Asset Backend (menghasilkan apps/api/public/build)
+bun --filter @repo/api build
+# atau: cd apps/api && npm run build
+```
+
+---
+
+## ❓ Troubleshooting
+
+- **Error: `SQLSTATE[HY000] [2002] Connection refused`**
+  - Pastikan service MySQL sudah aktif (jika memakai MySQL), atau ubah konfigurasi ke SQLite di `apps/api/.env` (`DB_CONNECTION=sqlite`).
+- **Error: `Port 5176 / 8003 already in use`**
+  - Matikan proses yang menggunakan port tersebut atau ubah konfigurasi port pada command serve / vite config.
