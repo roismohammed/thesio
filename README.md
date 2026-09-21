@@ -1,5 +1,7 @@
 # Thesio — Platform Asisten Skripsi Mahasiswa
 
+🌐 **Live Website:** [https://thesio.web.id](https://thesio.web.id)
+
 Thesio adalah platform berbasis web untuk memandu mahasiswa mengerjakan skripsi secara terstruktur, mandiri, dan efisien.
 
 Project ini menggunakan arsitektur **Monorepo** yang memisahkan Backend API dan Frontend Web ke dalam direktori `apps/`:
